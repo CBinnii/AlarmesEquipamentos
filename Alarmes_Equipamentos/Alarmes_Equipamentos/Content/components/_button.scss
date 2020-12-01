@@ -1,0 +1,99 @@
+﻿.btn {
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+
+    &.btn-voltar {
+        background-color: $base-color-blue;
+        color: $base-color-white;
+        float: left;
+        font-weight: 600;
+        /*margin: 15px;*/
+        margin-right: 15px;
+        margin-left: 0;
+
+        &:hover {
+            background-color: lighten($base-color-blue, 10%);
+        }
+    }
+
+    &.btn-listar {
+        background-color: $base-color-light-blue;
+        border: 1px solid $base-color-light-blue;
+        font-weight: 600;
+        width: 40px;
+        color: $base-color-white;
+
+        &:hover {
+            background-color: $base-color-blue;
+            border: 1px solid $base-color-blue;
+        }
+    }
+
+    &.btn-home {
+        background-color: #FFFFFF;
+        color: $base-color-blue;
+        border: 1px solid $base-color-blue;
+        font-size: 16px;
+        white-space: normal;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 0;
+        margin-bottom: 5px;
+        width: 100%;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 14px;
+        }
+    }
+
+    &.btn-editar, &.btn-deletar {
+        background-color: $base-color-blue;
+        color: $base-color-white;
+        float: left;
+        font-weight: 600;
+
+        &:hover {
+            background-color: lighten($base-color-blue, 10%);
+        }
+    }
+
+    &.btn-cadastro {
+        background-color: $base-color-blue;
+        color: $base-color-white;
+        float: right;
+        font-weight: 600;
+        margin-left: 15px;
+
+        &:hover {
+            background-color: lighten($base-color-blue, 10%);
+        }
+    }
+
+    &.btn-pesquisa {
+        background-color: $base-color-blue;
+        color: $base-color-white;
+        float: right;
+        font-weight: 600;
+        width: 100px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 2px solid $base-color-blue;
+
+        &:hover {
+            background-color: lighten($base-color-blue, 10%);
+            border-bottom: 2px solid lighten($base-color-blue, 10%);
+        }
+    }
+
+    &.btn-listagem {
+        background-color: $base-color-blue;
+        color: $base-color-white;
+        float: right;
+        font-weight: 600;
+        margin-right: 15px;
+
+        &:hover {
+            background-color: lighten($base-color-blue, 10%);
+        }
+    }
+}

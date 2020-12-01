@@ -1,1 +1,33 @@
 ﻿@import "vendor/bootstrap/bootstrap.scss";
+@import "vendor/bootstrap/bootstrap-grid.scss";
+@import "vendor/bootstrap/bootstrap-reboot.scss";
+
+@import "vendor/fontawesome/fontawesome.scss";
+@import "vendor/fontawesome/brands.scss";
+@import "vendor/fontawesome/regular.scss";
+@import "vendor/fontawesome/solid.scss";
+@import "vendor/fontawesome/v4-shims.scss";
+
+@import "vendor/_variables.scss";
+
+@import "mixins/_flexbox.scss";
+@import "mixins/_clearfix.scss";
+@import "mixins/_vertical-align.scss";
+@import "mixins/_middle-align.scss";
+
+@import "components/_button.scss";
+@import "components/_tooltip.scss";
+
+@import "styles/_equipamentos.scss";
+
+ul { 
+    margin: 0;
+}
+
+.inside {
+    padding-left: 80px;
+
+    li {
+        list-style: circle;
+    }
+}

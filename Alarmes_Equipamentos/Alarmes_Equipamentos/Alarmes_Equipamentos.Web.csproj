@@ -48,7 +48,16 @@
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RazorEngine, Version=3.8.2.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.8.2\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorMailer.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorMailer.1.0.0\lib\net452\RazorMailer.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -131,19 +140,28 @@
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Email\AlarmesEquipamentosMailer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\Erro\ErroVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\logo-1.png" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Content\style.css">
       <DependentUpon>style.scss</DependentUpon>
     </Content>
     <Content Include="Content\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -255,6 +273,44 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Content\styles\_equipamentos.scss" />
+    <Content Include="Content\vendor\_variables.scss" />
+    <Content Include="Content\mixins\_flexbox.scss" />
+    <Content Include="Content\mixins\_vertical-align.scss" />
+    <Content Include="Content\mixins\_middle-align.scss" />
+    <Content Include="Content\mixins\_clearfix.scss" />
+    <Content Include="Content\components\_button.scss" />
+    <Content Include="Content\components\_tooltip.scss" />
+    <Content Include="Content\vendor\fontawesome\brands.scss" />
+    <Content Include="Content\vendor\fontawesome\fontawesome.scss" />
+    <Content Include="Content\vendor\fontawesome\regular.scss" />
+    <Content Include="Content\vendor\fontawesome\solid.scss" />
+    <Content Include="Content\vendor\fontawesome\v4-shims.scss" />
+    <Content Include="Content\vendor\fontawesome\_animated.scss" />
+    <Content Include="Content\vendor\fontawesome\_bordered-pulled.scss" />
+    <Content Include="Content\vendor\fontawesome\_core.scss" />
+    <Content Include="Content\vendor\fontawesome\_fixed-width.scss" />
+    <Content Include="Content\vendor\fontawesome\_icons.scss" />
+    <Content Include="Content\vendor\fontawesome\_larger.scss" />
+    <Content Include="Content\vendor\fontawesome\_list.scss" />
+    <Content Include="Content\vendor\fontawesome\_mixins.scss" />
+    <Content Include="Content\vendor\fontawesome\_rotated-flipped.scss" />
+    <Content Include="Content\vendor\fontawesome\_screen-reader.scss" />
+    <Content Include="Content\vendor\fontawesome\_shims.scss" />
+    <Content Include="Content\vendor\fontawesome\_stacked.scss" />
+    <Content Include="Content\vendor\fontawesome\_variables.scss" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\vendor\fontawesome\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -279,8 +335,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -289,7 +343,6 @@
     <Folder Include="Areas\Alarmes\Models\" />
     <Folder Include="Areas\Alarmes\Views\Shared\" />
     <Folder Include="Areas\Equipamentos\Models\" />
-    <Folder Include="Content\components\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -309,6 +362,10 @@
     <ProjectReference Include="..\Alarmes_Equipamentos.DAL\Alarmes_Equipamentos.DAL.csproj">
       <Project>{5e53b5a2-49ba-4ec6-8d82-5514d9fd7c75}</Project>
       <Name>Alarmes_Equipamentos.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alarmes_Equipamentos.Resources\Alarmes_Equipamentos.Resources.csproj">
+      <Project>{80eee9a0-c666-45d6-ab4c-d118a7d8404c}</Project>
+      <Name>Alarmes_Equipamentos.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

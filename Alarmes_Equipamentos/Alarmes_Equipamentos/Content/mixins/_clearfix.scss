@@ -1,0 +1,15 @@
+﻿@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+$grid-columns: 12;
+
+@mixin columns($total-columns) {
+    $columns: ($grid-columns/ $total-columns);
+    width: percentage(($columns / $grid-columns));
+}

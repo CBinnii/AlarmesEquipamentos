@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alarmes_Equipamentos.BLL", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alarmes_Equipamentos.DAL", "Alarmes_Equipamentos.DAL\Alarmes_Equipamentos.DAL.csproj", "{5E53B5A2-49BA-4EC6-8D82-5514D9FD7C75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alarmes_Equipamentos.Resources", "Alarmes_Equipamentos.Resources\Alarmes_Equipamentos.Resources.csproj", "{80EEE9A0-C666-45D6-AB4C-D118A7D8404C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5E53B5A2-49BA-4EC6-8D82-5514D9FD7C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E53B5A2-49BA-4EC6-8D82-5514D9FD7C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E53B5A2-49BA-4EC6-8D82-5514D9FD7C75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80EEE9A0-C666-45D6-AB4C-D118A7D8404C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80EEE9A0-C666-45D6-AB4C-D118A7D8404C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80EEE9A0-C666-45D6-AB4C-D118A7D8404C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80EEE9A0-C666-45D6-AB4C-D118A7D8404C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

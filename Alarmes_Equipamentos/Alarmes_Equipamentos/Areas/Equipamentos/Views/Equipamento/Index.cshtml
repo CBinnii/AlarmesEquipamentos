@@ -1,7 +1,90 @@
-﻿
+﻿@model IEnumerable<Alarmes_Equipamentos.Areas.Equipamentos.ViewModels.Equipamento>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Equipamentos Disponíveis";
 }
 
-<h2>Index</h2>
+<div class="equipamentos">
+    <div class="title-bread">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Equipamentos Disponíveis</h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 tabela tabela__home">
+                @using (Html.BeginForm("Index", "Equipamento", FormMethod.Get))
+                {
+                    <div class="filtro">
+                        @Html.Label("s", "Filtro:")
+                        <div class="clearfix"></div>
+                        @Html.TextBox("s", null, new { @class = "input-filtro" })
+                        <input type="submit" class="btn btn-destino" value="Procurar" />
+                    </div>
+                }
+                <div class="tabela__sobre">
+                    <div class="tabela__header bg-dark">
+                        <div class="col-sm-2 no-padding"><p>@Html.DisplayNameFor(model => model.Nome)</p></div>
+                        <div class="col-sm-4 no-padding"><p>@Html.DisplayNameFor(model => model.NumeroSerie)</p></div>
+                        <div class="col-sm-2 no-padding"><p>@Html.DisplayNameFor(model => model.Tipo)</p></div>
+                        <div class="col-sm-2 no-padding"><p>@Html.DisplayNameFor(model => model.DataCadastro)</p></div>
+                        <div class="col-sm-2 no-padding"></div>
+                    </div>
+                    <div class="tabela__body">
+                        @if (Model.Count() > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <div class="line">
+                                    <div class="col-sm-2"><p>@Html.DisplayFor(modelItem => item.Nome)</p></div>
+                                    <div class="col-sm-4"><p>@Html.DisplayFor(modelItem => item.NumeroSerie)</p></div>
+                                    <div class="col-sm-2"><p>@(Alarmes_Equipamentos.Resources.Enumeradores.EnumClassificacao.ResourceManager.GetString(item.Tipo.ToString()))</p></div>
+                                    <div class="col-sm-2"><p>@Html.DisplayFor(modelItem => item.DataCadastro)</p></div>
+                                    <div class="col-sm-2">
+                                        <p>
+                                            <a href="/" class="btn btn-listar tooltips fas fa-pencil-alt">
+                                                <span>Editar</span>
+                                            </a>
+                                            <a href="/" class="btn btn-listar tooltips fas fa-trash-alt">
+                                                <span>Deletar</span>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="line">
+                                <div class="col-sm-12"><p>Nenhum equipamento encontrado</p></div>
+                            </div>
+                        }
+                        
+                        @*<div class="line">
+                            <div class="col-sm-2"><p>Nome</p></div>
+                            <div class="col-sm-4"><p>Numero Serie</p></div>
+                            <div class="col-sm-2"><p>Tensão</p></div>
+                            <div class="col-sm-2"><p>25/11/2020 15:21:15</p></div>
+                            <div class="col-sm-2">
+                                <p>
+                                    <a href="/" class="btn btn-listar tooltips fas fa-pencil-alt">
+                                        <span>Editar</span>
+                                    </a>
+                                    <a href="/" class="btn btn-listar tooltips fas fa-trash-alt">
+                                        <span>Deletar</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+                <a href="/" class="btn btn-cadastro"><i class="fas fa-plus"></i> Cadastrar Novo</a>
+            </div>
+        </div>
+    </div>
+</div>
